@@ -1,23 +1,74 @@
-vaibhav sable 
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
-    <mat-toolbar color="primary" class="example-toolbar">
-      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name">Responsive App</h1>
-    </mat-toolbar>
-  
-    <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-        <mat-nav-list>
-          <a mat-list-item routerLink="." *ngFor=""></a>
+<div class="example-container">
+  <mat-toolbar color="white" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets\image\img.png" alt="Image">
+    <span>Fundoo</span>
+    <div fxLayoutGap="150" fxLayoutAlign="row">
+      <div class="search" fxLayoutAlign="100">
+        <button mat-icon-button class="search-icon">
+          <mat-icon>search</mat-icon>
+        </button>
+        <input class="searchInput" placeholder="Search">
+        <!-- <button mat-icon-button class="cancel">
+          <mat-icon>clear</mat-icon>
+        </button> -->
+      </div>
+      <div>
+        <div>
+          <button mat-icon-button class="refresh">
+            <mat-icon>refresh</mat-icon>
+          </button>
+          <button mat-icon-button fxShow="true" fxHide.lt-sm="true">
+            <mat-icon class="icon">grid_view</mat-icon>
+          </button>
+          <button mat-icon-button class="sttings">
+            <mat-icon>settings</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <button mat-icon-button class="apps">
+          <mat-icon>apps</mat-icon>
+        </button>
+        <button mat-icon-button class="apps">
+          <img  class="img"src="assets\image\unnamed.png" alt="Image">
+        </button>
+
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <div>
+        <mat-nav-list style="width:200px">
+          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\bulb.png" height="20px"
+              style="margin-right:30%;">Notes</a>
+          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\notification.png"
+              height="20px" style="margin-right:30%;">Reminder</a>
+          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\pencil.png" height="20px"
+              style="margin-right:30%;">Edit Label</a>
+          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\bulb.png" height="20px"
+              style="margin-right:30%;">Archiev</a>
+          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\trash.png" height="20px"
+              style="margin-right:30%;">Trash</a>
+          <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">
+            <!-- <a mat-list-item routerLink="note" *ngFor="let nav of fillerNav">  -->
+
+          </a>
         </mat-nav-list>
-      </mat-sidenav>
-  
-      <mat-sidenav-content>
-        <p *ngFor="let content of fillerContent">{{content}}</p>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-  
-  <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <!-- <div style="height:91.8vh; background-color:white"></div> -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>

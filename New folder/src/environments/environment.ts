@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   BASEURL:"https://localhost:44318/api/"
+  //https://localhost:44318/Notes/Create
 };
 
 /*

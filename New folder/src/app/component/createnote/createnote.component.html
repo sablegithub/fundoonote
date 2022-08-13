@@ -1,0 +1,70 @@
+<!-- <div>
+<mat-card class="main" >
+    <mat-form-field style="width:100%;" fxLayout="row">
+        <input matInput placeholder="Take a Note">
+    </mat-form-field>
+    <div>
+    <img src="assets\image\ti.svg" alt="Image">
+    <img src="assets\image\t2.svg" alt="Image">
+    <img src="assets\image\t3.svg" alt="Image">
+    </div>
+</mat-card>
+  </div>
+    -->
+<div fxLayout="row">
+    <mat-card class="main" fxLayout="row" *ngIf="!isShow" (click)=toggleDisplay()>
+        <input matInput class="searchBar" style="font-weight: bold;" placeholder="Take a note...">
+        <div style="margin-left:auto" fxLayoutGap="25px">
+            <img src="assets\image\ti.svg" alt="Image">
+            <img src="assets\image\t2.svg" alt="Image">
+            <img src="assets\image\t3.svg" alt="Image">
+        </div>
+    </mat-card>
+    <mat-card class="main2" *ngIf="isShow" fxLayout="column">
+        <form [formGroup]="createForm" (ngSubmit)="create()">
+            <div fxLayout="row">
+                <input class="input" style="border: none; font-weight: bold; height: 20px;" matInput type="text"
+                    placeholder="Title" formControlName="title">
+                <img style="margin-left:auto" src="assets\image\pin.svg" alt="Image">
+            </div>
+            <br>
+            <input class="input" style="border: none; font-weight: bold; height: 20px;" matInput type="text"
+                placeholder="Take a note.." formControlName="discription">
+            <br><br><br>
+            <div fxLayout="row">
+                <div fxLayoutGap="20px">
+                    <img style="margin-right:auto; opacity: 0.5;" src="assets\image\r.svg" alt="Image">
+                    <img style="margin-right:auto; opacity: 0.5;" src="assets\image\c.svg" alt="Image">
+                    <img style="margin-right:auto; opacity: 0.5;" src="assets\image\s.svg" alt="Image">
+                    <img style="margin-right:auto; opacity: 0.5;" src="assets\image\p.svg" alt="Image">
+                    <img style="margin-right:auto; opacity: 0.5;" src="assets\image\a.svg" alt="Image">
+                    <img style="margin-right:auto; height: 25px; opacity: 0.5;" src="assets\image\m.svg" alt="Image">
+                </div>
+                <button type="button" style="margin-left:auto;"(click)=create()>Close</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
+<!-- <div>
+    <input matInput class="searchBar" (click)=toggleDisplay() placeholder="Title">
+    <input matInput class="searchBar" (click)=toggleDisplay() placeholder="Take a note...">
+</div> -->
+<!-- <html>
+
+<body>
+     <div [hidden] = "isShow">This is a div which toggles.</div>
+      <button (click) = toggleDisplay()>Toggle</button> 
+
+     <div *ngIf="!isShow">This is a div which toggles.</div>
+    <button (click)=toggleDisplay()>Toggle</button> 
+</body>
+
+</html> -->
+
+
+<!-- <mat-card >
+    <form class="main">
+         <input matInput class="searchBar" class="input" placeholder="Title">
+        <input matInput class="searchBar" class="input" placeholder="Take a note...">
+    </form>
+</mat-card>    -->

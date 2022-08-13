@@ -10,6 +10,7 @@ export class HttpService {
   constructor(private httpClient: HttpClient) { }
 
   postService(url: string, reqData: any, token: boolean, httpHeadersOptions: any) {
+    console.log(reqData);
     return this.httpClient.post(this.BaseUrl + url, reqData, token && httpHeadersOptions)
   }
 
@@ -18,13 +19,15 @@ export class HttpService {
     return this.httpClient.put(this.BaseUrl + url, reqData, token && httpHeadersOptions)
   }
 
-  getService() {
-    
+  getService(url: string,  token: boolean, httpHeadersOptions: any) {
+   
+    return this.httpClient.get(this.BaseUrl + url, token && httpHeadersOptions)
+
 
 
   }
   deleteService() {
-    
+
 
   }
 

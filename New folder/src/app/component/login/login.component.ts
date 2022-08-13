@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/UserService/user.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,29 +17,22 @@ export class LoginComponent implements OnInit {
 
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-
     });
   }
   login() {
-    
-    if (this.loginForm.valid){
-      this.UserService.loginUserService(this.loginForm.value).subscribe((response:any)=>{
-        console.log("login successfull",response);
-        localStorage.setItem("token",response.data)
-        
-      },(error:any)=>
-      {
+
+    if (this.loginForm.valid) {
+      this.UserService.loginUserService(this.loginForm.value).subscribe((response: any) => {
+        console.log("login successfull", response);
+        localStorage.setItem("token", response.data)
+
+      }, (error: any) => {
         console.log(error);
       })
-  
-
-    }else{
+    } else {
       return;
     }
-    
-  
   }
-
 }
 
 
