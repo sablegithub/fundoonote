@@ -8,11 +8,13 @@ import { Component,Input, OnInit } from '@angular/core';
 export class DisplaynotesComponent implements OnInit {
 
   constructor() {}
-  // @Input() notelistArray:any;
+  @Input() notelistArray:any;
 
   ngOnInit(): void {
-    //console.log(this.notelistArray);
-    
-  }
+    //this.notelistArray.reverse();
+    //this.notelistArray=this.notelistArray.reverse();
+    console.log(this.notelistArray);
+  
+  } 
 
 }

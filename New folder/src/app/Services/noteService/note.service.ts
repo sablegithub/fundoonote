@@ -7,9 +7,9 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NoteService {
-  token: any;
+  token:any
   constructor(private httpService: HttpService) {
-    this.token = localStorage.getItem("token");
+    this.token = localStorage.getItem("token")
   }
 
   createnoteservice(reqData: any) {
@@ -19,7 +19,6 @@ export class NoteService {
         'Content-type': 'application/json',
         //'Authorization':this.token
         'Authorization': 'Bearer ' + this.token
-
       })
     }
     return this.httpService.postService('Notes/Create', reqData, true, httpOptions)

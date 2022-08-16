@@ -18,14 +18,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import{MatListModule}from'@angular/material/list'
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list'
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { CreatenoteComponent } from './component/createnote/createnote.component';
 import { DisplaynotesComponent } from './component/displaynotes/displaynotes.component';
 import { GetallnotesComponent } from './component/getallnotes/getallnotes.component';
 import { IconsComponent } from './component/icons/icons.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AuthguardService } from './Services/AuthGuard/authguard.service';
  
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,14 +51,18 @@ import { IconsComponent } from './component/icons/icons.component';
     MatInputModule, MatIconModule,
     FlexLayoutModule, FormsModule, ReactiveFormsModule,
     FlexLayoutModule, MatCardModule, MatCheckboxModule,
-    MatButtonModule, HttpClientModule, MatSidenavModule,MatListModule,
-    MatToolbarModule
+    MatButtonModule, HttpClientModule, MatSidenavModule, MatListModule,
+    MatToolbarModule,MatGridListModule,
 
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
-})
-export class AppModule { 
   
-  }
+
+})
+export class AppModule {
+
+}
 

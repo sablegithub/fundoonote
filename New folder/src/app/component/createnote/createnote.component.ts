@@ -33,8 +33,8 @@ export class CreatenoteComponent implements OnInit {
   create() {
     this.isShow = false;
     if (this.createForm.valid) {
-      console.log(this.createForm.value);
-      
+      //console.log(this.createForm.value);
+       
       let data = {
         title: this.createForm.value.title,
         discription: this.createForm.value.discription,
@@ -45,9 +45,7 @@ export class CreatenoteComponent implements OnInit {
         modifidedate: "2022-08-12T02:50:10.767Z",
         archieve: false,
         pin: false,
-        trash: false,
-
-  
+        trash: false
         
       }
       //console.log("data submit", data);
@@ -57,10 +55,7 @@ export class CreatenoteComponent implements OnInit {
       }, (error: any) => {
         console.log(error);
       })
-    } else {
-      console.log("Enter any notes");
-      
-    }
+    } 
   }
 }
 
