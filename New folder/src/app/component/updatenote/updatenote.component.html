@@ -1,21 +1,22 @@
-<mat-card *ngFor="let Notes of notelistArray.reverse()" class="mat-card" >
+<mat-card class="mat-card">
     <div>
-        <div fxLayout="row"  (click)="openDialog(Notes)" >
+        <div fxLayout="row">
             <div>
-                {{Notes.title}}
+                <input type="text" [(ngModel)]="title">
             </div>
             <div class="pin">
                 <img style="margin-left:auto" src="assets\image\pin.svg" alt="Image">
             </div>
         </div>
         <br>
-        <div (click)="openDialog(Notes)">
-            {{Notes.discription}}
+        <div>
+            <input type="text" [(ngModel)]="discription">
         </div>
         <br><br><br>
-        <!-- <div>{{Notes.noteID}}</div> -->
         <div class="icon">
             <app-icons></app-icons>
-        </div>
+            <button type="button" class="button" (click)="updateNote()" >Close</button>
+        </div>      
     </div>
+    
 </mat-card>

@@ -61,12 +61,18 @@ h1.example-app-name {
   .setting{
     margin-left: auto;
   }
-  .apps{
-    margin-left: 15%;
-  }
+  // .apps:hover .logout{
+  //   margin-left: 15%;
+  //   visibility:visible;
+  // }
   .img{
      
       height: 27px;
-      width: 27px;
-     
+      width: 27px;  
+  }
+  .span{
+    visibility: hidden;
+  }
+  .apps:hover .span{
+    visibility: visible;
   }

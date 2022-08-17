@@ -25,7 +25,12 @@ import { DisplaynotesComponent } from './component/displaynotes/displaynotes.com
 import { GetallnotesComponent } from './component/getallnotes/getallnotes.component';
 import { IconsComponent } from './component/icons/icons.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { AuthguardService } from './Services/AuthGuard/authguard.service';
+import { AuthguardServiceService } from './Services/AuthGuard/authguard-service.service';
+import { UpdatenoteComponent } from './component/updatenote/updatenote.component';
+import { MatDialogContent, MatDialogModule } from '@angular/material/dialog';
+import { ArchiveNoteComponent } from './archive-note/archive-note.component';
+
+ 
  
 
 
@@ -40,7 +45,9 @@ import { AuthguardService } from './Services/AuthGuard/authguard.service';
     CreatenoteComponent,
     DisplaynotesComponent,
     GetallnotesComponent,
-    IconsComponent
+    IconsComponent,
+    UpdatenoteComponent,
+    ArchiveNoteComponent,
 
   ],
   imports: [
@@ -52,13 +59,14 @@ import { AuthguardService } from './Services/AuthGuard/authguard.service';
     FlexLayoutModule, FormsModule, ReactiveFormsModule,
     FlexLayoutModule, MatCardModule, MatCheckboxModule,
     MatButtonModule, HttpClientModule, MatSidenavModule, MatListModule,
-    MatToolbarModule,MatGridListModule,
+    MatToolbarModule,MatGridListModule,MatDialogModule,
 
   ],
   providers: [
-    AuthguardService
+    AuthguardServiceService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[UpdatenoteComponent]
   
 
 })

@@ -9,7 +9,7 @@ import { UserService } from 'src/app/Services/UserService/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+ //user='1';
   loginForm!: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder, private UserService: UserService,private router:Router) { }
@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
+   // localStorage.setItem("SessionUser",this.user)
   }
   login() {
 

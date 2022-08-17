@@ -1,4 +1,6 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UpdatenoteComponent } from '../updatenote/updatenote.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-displaynotes',
@@ -7,14 +9,27 @@ import { Component,Input, OnInit } from '@angular/core';
 })
 export class DisplaynotesComponent implements OnInit {
 
-  constructor() {}
-  @Input() notelistArray:any;
+  constructor(public dialog: MatDialog) { }
+  @Input() notelistArray: any;
 
   ngOnInit(): void {
-    //this.notelistArray.reverse();
-    //this.notelistArray=this.notelistArray.reverse();
+    
     console.log(this.notelistArray);
-  
-  } 
+
+  }
+  openDialog(Notes:any): void {
+    console.log(Notes);
+    
+    const dialogRef = this.dialog.open(UpdatenoteComponent, {
+      width: '450px',
+      data:Notes    
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed',result)
+    });
+  }
+
+
 
 }
