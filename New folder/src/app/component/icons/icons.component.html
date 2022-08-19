@@ -1,10 +1,30 @@
 <div fxLayout="row">
-    <div fxLayoutGap="20px">
-        <img style="margin-right:auto; opacity: 0.5;" src="assets\image\r.svg" alt="Image">
-        <img style="margin-right:auto; opacity: 0.5;" src="assets\image\c.svg" alt="Image">
-        <img style="margin-right:auto; opacity: 0.5;" src="assets\image\s.svg" alt="Image">
-        <img style="margin-right:auto; opacity: 0.5;" src="assets\image\p.svg" alt="Image">
-        <img style="margin-right:auto; opacity: 0.5;" src="assets\image\a.svg" alt="Image">
-        <img style="margin-right:auto; height: 25px; opacity: 0.5;" src="assets\image\m.svg" alt="Image">
+    <div class="button" fxLayout="row" fxLayoutGap="30px">
+        <img style="  opacity: 0.5;" src="assets\image\r.svg" alt="Image">
+
+        <img style="  opacity: 0.5;" src="assets\image\c.svg" alt="Image">
+
+        <img style="  opacity: 0.5;" src="assets\image\s.svg" alt="Image">
+
+        <img style="  opacity: 0.5;" src="assets\image\p.svg" alt="Image">
+        <img style="  opacity: 0.5;" src="assets\image\a.svg" alt="Image">
+
+
+        <img [matMenuTriggerFor]="menu" style="margin-right:auto; height: 25px; opacity: 0.5;" src="assets\image\m.svg"
+            alt="Image" height="10px">
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="Delete()">Delete note</button>
+            <button mat-menu-item>Add Label</button>
+            <button mat-menu-item>Add drawing</button>
+            <button mat-menu-item>Make a copy</button>
+            <button mat-menu-item>Show checkboxes</button>
+            <button mat-menu-item>Copy to google Docs</button>
+        </mat-menu>
+
+
     </div>
+
+
+
+
 </div>

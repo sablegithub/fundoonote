@@ -7,20 +7,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./getallnotes.component.scss']
 })
 export class GetallnotesComponent implements OnInit {
-   NoteList :any;
+  NoteList= []
+  notearray: any
+  constructor(private NoteService: NoteService) { }
 
-  constructor( private NoteService: NoteService) { }
-
-  ngOnInit():void {
-     this.getallnotes();
+  ngOnInit(): void {
+    this.getallnotes();
   }
 
-  getallnotes()
-   {
+  getallnotes() {
     //call get all list api here
     this.NoteService.getallnotes().subscribe((response: any) => {
-      this.NoteList = response.data
-    }
-  )}
+      console.log(response)
+      this.NoteList = response.data.filter((Object: any) => {
+        return Object.trash !== true
+      })
+      this.notearray = this.NoteList
+      console.log(this.notearray);
+
+    } 
+    
+    )
+  }
 
 }

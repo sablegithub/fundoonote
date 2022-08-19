@@ -17,7 +17,7 @@ export class UpdatenoteComponent implements OnInit {
     console.log("dialog data in dialog box", data);
     this.noteID = this.data.noteID
     this.title = data.title,
-      this.discription = data.discription
+    this.discription = data.discription
   }
   onNoClick(): void {
     this.dialogRef.close();
@@ -26,9 +26,7 @@ export class UpdatenoteComponent implements OnInit {
     let reqData = {
       title: this.title,
       discription: this.discription
-
     }
-    //console.log(this.data.NoteID);
     this.NoteService.update(reqData, this.noteID).subscribe((response: any) => {
       console.log(response)
       this.dialogRef.close("note updated")

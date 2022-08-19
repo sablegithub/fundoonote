@@ -23,8 +23,6 @@ export class HttpService {
    
     return this.httpClient.get(this.BaseUrl + url, token && httpHeadersOptions)
 
-
-
   }
   deleteService() {
 

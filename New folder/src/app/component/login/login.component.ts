@@ -28,8 +28,6 @@ export class LoginComponent implements OnInit {
         console.log("login successfull", response);
         localStorage.setItem("token", response.data);
         this.router.navigateByUrl('/dashboard')
-
-
       }, (error: any) => {
         console.log(error);
       })

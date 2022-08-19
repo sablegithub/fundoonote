@@ -33,13 +33,11 @@
         <button mat-icon-button class="apps">
           <mat-icon>apps</mat-icon>
         </button>
-        <button mat-icon-button class="apps" (click)="Logout()">
-          
+        <button mat-icon-button class="apps" (click)="Logout()"> 
           <img class="img" src="assets\image\shutdown.png" alt="Image">
           <mat-card class="span"> 
           <span >logout</span>
           </mat-card>
-
         </button>
 
       </div>
@@ -51,7 +49,7 @@
       fixedTopGap="56">
       <div>
         <mat-nav-list style="width:200px">
-          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\bulb.png" height="20px"
+          <a mat-list-item routerLink="/dashboard/getallnotes" style="border-radius:10px 40px 40px 10px;"><img src="assets\image\bulb.png" height="20px"
               style="margin-right:30%;">Notes</a>
           <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\notification.png"
               height="20px" style="margin-right:30%;">Reminder</a>
@@ -59,11 +57,11 @@
               style="margin-right:30%;">Edit Label</a>
           <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\bulb.png" height="20px"
               style="margin-right:30%;">Archiev</a>
-          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\trash.png" height="20px"
-              style="margin-right:30%;">Trash</a>
+          <a mat-list-item routerLink="/dashboard/Trash" style="border-radius:10px 40px 40px 10px;"><img src="assets\image\trash.png" height="20px"
+              style="margin-right:30%;" (onclick)="Trash()">Trash</a>
           <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">
             <!-- <a mat-list-item routerLink="note" *ngFor="let nav of fillerNav">  -->
-
+              
           </a>
         </mat-nav-list>
       </div>

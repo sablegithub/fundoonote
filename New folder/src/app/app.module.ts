@@ -28,7 +28,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { AuthguardServiceService } from './Services/AuthGuard/authguard-service.service';
 import { UpdatenoteComponent } from './component/updatenote/updatenote.component';
 import { MatDialogContent, MatDialogModule } from '@angular/material/dialog';
-import { ArchiveNoteComponent } from './archive-note/archive-note.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { TrashnotesComponent } from './component/trashnotes/trashnotes.component';
 
  
  
@@ -47,7 +48,7 @@ import { ArchiveNoteComponent } from './archive-note/archive-note.component';
     GetallnotesComponent,
     IconsComponent,
     UpdatenoteComponent,
-    ArchiveNoteComponent,
+    TrashnotesComponent,
 
   ],
   imports: [
@@ -59,7 +60,7 @@ import { ArchiveNoteComponent } from './archive-note/archive-note.component';
     FlexLayoutModule, FormsModule, ReactiveFormsModule,
     FlexLayoutModule, MatCardModule, MatCheckboxModule,
     MatButtonModule, HttpClientModule, MatSidenavModule, MatListModule,
-    MatToolbarModule,MatGridListModule,MatDialogModule,
+    MatToolbarModule,MatGridListModule,MatDialogModule,MatMenuModule
 
   ],
   providers: [
