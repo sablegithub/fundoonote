@@ -30,6 +30,9 @@ import { UpdatenoteComponent } from './component/updatenote/updatenote.component
 import { MatDialogContent, MatDialogModule } from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import { TrashnotesComponent } from './component/trashnotes/trashnotes.component';
+import { ArchivenotesComponent } from './component/archivenotes/archivenotes.component'; 
+import { CreatelabelComponent } from './component/createlabel/createlabel.component';
+import { SearchPipe } from './component/search.pipe';
 
  
  
@@ -49,6 +52,9 @@ import { TrashnotesComponent } from './component/trashnotes/trashnotes.component
     IconsComponent,
     UpdatenoteComponent,
     TrashnotesComponent,
+    ArchivenotesComponent,
+    CreatelabelComponent,
+    SearchPipe,
 
   ],
   imports: [

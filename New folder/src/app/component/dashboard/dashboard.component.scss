@@ -37,13 +37,15 @@ h1.example-app-name {
 .search{
     border: 1px solid lightgray;
     border-radius: 7px;
-    width: 650px;
-    margin-left:15%;
+    width: 750px;
+    margin-left:25%;
     outline: none;
   }
   .search_icon{
     margin-left: 100%;
     position: absolute;
+    height: 50px;
+    
   }
   .searchInput{
     border:none;

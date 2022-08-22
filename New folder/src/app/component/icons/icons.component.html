@@ -7,7 +7,7 @@
         <img style="  opacity: 0.5;" src="assets\image\s.svg" alt="Image">
 
         <img style="  opacity: 0.5;" src="assets\image\p.svg" alt="Image">
-        <img style="  opacity: 0.5;" src="assets\image\a.svg" alt="Image">
+        <img    (click)="Archive()" style="opacity: 0.5;" src="assets\image\a.svg" alt="Image">
 
 
         <img [matMenuTriggerFor]="menu" style="margin-right:auto; height: 25px; opacity: 0.5;" src="assets\image\m.svg"
@@ -21,7 +21,10 @@
             <button mat-menu-item>Copy to google Docs</button>
         </mat-menu>
 
-
+        <!-- <div   style="height:20px; width: auto; border-radius: 50px;">
+            <img class="icon" style="margin-left: 20px; " src="assets\image\shutdown.png">
+            <img class="icon" style="margin-left: 20px;" src="assets\image\shutdown.png">
+        </div> -->
     </div>
 
 

@@ -59,7 +59,20 @@ export class NoteService {
       })
     }
     return this.httpService.putService(`Notes/trash?NoteID=${reqData.noteID}`, reqData ,true, httpOptions)
-    //Notes/trash?NoteID=15
+   
+  }
+  archive(reqData:any ) {
+    //this.token = localStorage.getItem("token")
+    console.log(reqData);
+    
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        //'Authorization':this.token
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService(`Notes/Archive?NoteID=${reqData.noteID}`, reqData ,true, httpOptions)  
   }
 }
 

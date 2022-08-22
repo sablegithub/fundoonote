@@ -1,0 +1,27 @@
+<div class="matcard" fxLayoutAlign="center center" style="margin-top: 190px;">
+    <mat-card style="width:250px ;">
+        <form [formGroup]="createForm" (ngSubmit)="create()">
+            <h3>Edit Labels</h3>
+            <div fxLayout="row">
+                <div>
+                    <button class="button" mat-icon-button>
+                        <img src="assets\image\label1.svg ">
+                    </button>
+                </div>
+
+                <div fxLayoutAlign="center center">
+                    <input matInput class="typepart" type="text" placeholder="create new label"
+                        formControlName="labelName">
+                </div>
+                <div>
+                    <button class="button" mat-icon-button>
+                        <img src="assets\image\laebl2.svg ">
+                    </button>
+                </div>
+            </div>
+            <div fxLayoutAlign="end end">
+                <button (click)="create()" mat-icon-button>done</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

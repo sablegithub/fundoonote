@@ -7,13 +7,20 @@
     <span>Fundoo</span>
     <div fxLayoutGap="150" fxLayoutAlign="row">
       <div class="search" fxLayoutAlign="100">
-        <button mat-icon-button class="search-icon">
-          <mat-icon>search</mat-icon>
-        </button>
-        <input class="searchInput" placeholder="Search">
-        <!-- <button mat-icon-button class="cancel">
+        <!-- <button><mat-icon-button class="search-icon"></mat-icon-button> </button> -->
+        <!-- <mat-icon class="search-icon" style="height: -10px;">search</mat-icon>
+           <input  (keyup)="searchTitle($event)" type="serch" placeholder="Search" style="width:450px;"> -->
+          <!-- <input class="search-icon" type="text" (keyup)="searchTitle($event)" placeholder="Search"> -->
+
+          <button mat-icon-button class="search-icon">
+            <mat-icon>search</mat-icon>
+          </button>
+          <input (keyup)="searchTitle($event)" class="searchInput" placeholder="Search">
+         
+         <!-- <input class="searchInput" placeholder="Search"> -->
+         <!-- <button mat-icon-button class="cancel">
           <mat-icon>clear</mat-icon>
-        </button> -->
+        </button>    -->
       </div>
       <div>
         <div>
@@ -53,9 +60,9 @@
               style="margin-right:30%;">Notes</a>
           <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\notification.png"
               height="20px" style="margin-right:30%;">Reminder</a>
-          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\pencil.png" height="20px"
+          <a mat-list-item  routerLink="/dashboard/createlabel"  style="border-radius:10px 40px 40px 10px;"><img src="assets\image\pencil.png" height="20px"
               style="margin-right:30%;">Edit Label</a>
-          <a mat-list-item style="border-radius:10px 40px 40px 10px;"><img src="assets\image\bulb.png" height="20px"
+          <a mat-list-item routerLink="/dashboard/Archiev" style="border-radius:10px 40px 40px 10px;"><img src="assets\image\bulb.png" height="20px"
               style="margin-right:30%;">Archiev</a>
           <a mat-list-item routerLink="/dashboard/Trash" style="border-radius:10px 40px 40px 10px;"><img src="assets\image\trash.png" height="20px"
               style="margin-right:30%;" (onclick)="Trash()">Trash</a>

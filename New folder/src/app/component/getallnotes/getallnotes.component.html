@@ -1,3 +1,3 @@
 
-<app-createnote></app-createnote>
-<app-displaynotes [notelistArray]="NoteList"></app-displaynotes>
+<app-createnote (autorefreshCreateevent)="allnotes()"></app-createnote>
+<app-displaynotes (autorefreshevent)="allnotes()" [notelistArray]="NoteList"></app-displaynotes>

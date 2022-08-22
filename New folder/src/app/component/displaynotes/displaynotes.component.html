@@ -1,4 +1,4 @@
-<mat-card *ngFor="let Notes of notelistArray.reverse()" class="mat-card" >
+<mat-card *ngFor="let Notes of notelistArray.reverse()  | search : Serchstring " class="mat-card" >
     <div>
         <div fxLayout="row"  (click)="openDialog(Notes)" >
             <div>
@@ -15,7 +15,7 @@
         <br><br><br>
         <!-- <div>{{Notes.noteID}}</div> -->
         <div class="icon">
-            <app-icons [noteID]="Notes.noteID"></app-icons>
+            <app-icons (Autorefresh)="datareceivefromiconcomponents()"   [noteID]="Notes.noteID"></app-icons>
         </div>
     </div>
 </mat-card>

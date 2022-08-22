@@ -9,6 +9,8 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { ResetpasswordComponent } from './component/resetpassword/resetpassword.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { TrashnotesComponent } from './component/trashnotes/trashnotes.component';
+import { ArchivenotesComponent } from './component/archivenotes/archivenotes.component';
+import { CreatelabelComponent } from './component/createlabel/createlabel.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,7 +22,9 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: "/dashboard/getallnotes", pathMatch: 'full' },
       { path: 'getallnotes', component: GetallnotesComponent },
-      { path: 'Trash', component: TrashnotesComponent }
+      { path: 'Trash', component: TrashnotesComponent },
+      { path: 'Archiev', component: ArchivenotesComponent },
+      { path: 'createlabel', component: CreatelabelComponent }
     ]
   }
 ];
