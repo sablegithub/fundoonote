@@ -1,6 +1,6 @@
-<mat-card *ngFor="let Notes of notelistArray.reverse()  | search : Serchstring " class="mat-card" >
+<mat-card *ngFor="let Notes of notelistArray.reverse()  | search : Serchstring " class="mat-card"  [style.background]="Notes.color">
     <div>
-        <div fxLayout="row"  (click)="openDialog(Notes)" >
+        <div fxLayout="row"  (click)="openDialog(Notes)"   >
             <div>
                 {{Notes.title}}
             </div>

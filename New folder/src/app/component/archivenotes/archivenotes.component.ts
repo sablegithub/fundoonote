@@ -20,12 +20,16 @@ export class ArchivenotesComponent implements OnInit {
     //call get all list api here   
     this.NoteService.getallnotes().subscribe((response: any) => {
       console.log(response);
-
+  
+   
       this.archiveList = response.data.filter((Object: any) => {
-        return Object.trash !== true
+         return  Object.archive == true  
+            
+         
       })
       //this.ArchievList = this.archiveList
       console.log(this.archiveList);
+      //console.log("vaibhav here");
     }
 
     )

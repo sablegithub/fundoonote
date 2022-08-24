@@ -24,7 +24,7 @@ export class NoteService {
     return this.httpService.postService('Notes/Create', reqData, true, httpOptions)
   }
   getallnotes() {
-     
+
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -46,11 +46,11 @@ export class NoteService {
     }
     return this.httpService.putService('Notes/Update?NoteID=' + NoteID, reqData, true, httpOptions)
   }
-  
-  trash(reqData:any) {
+
+  trash(reqData: any) {
     this.token = localStorage.getItem("token")
     console.log(reqData);
-    
+
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -58,13 +58,13 @@ export class NoteService {
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpService.putService(`Notes/trash?NoteID=${reqData.noteID}`, reqData ,true, httpOptions)
-   
+    return this.httpService.putService(`Notes/trash?NoteID=${reqData.noteID}`, reqData, true, httpOptions)
+
   }
-  archive(reqData:any ) {
-    //this.token = localStorage.getItem("token")
+  archive(reqData: any) {
+    this.token = localStorage.getItem("token")
     console.log(reqData);
-    
+
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -72,7 +72,26 @@ export class NoteService {
         'Authorization': 'Bearer ' + this.token
       })
     }
-    return this.httpService.putService(`Notes/Archive?NoteID=${reqData.noteID}`, reqData ,true, httpOptions)  
+    return this.httpService.putService(`Notes/Archive?NoteID=${reqData.noteID}`, reqData, true, httpOptions)
   }
+
+  Colors(noteID: any,color:any) {
+    this.token = localStorage.getItem("token")
+    console.log(noteID,color);
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        //'Authorization':this.token
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    //return this.httpService.postService(`Notes/UploadColor?NoteID=${reqData.noteID}`, reqData, true, httpOptions);
+   // return this.httpService.postService(`Notes/UploadColor?NoteID=`+reqData.noteID `& color=`+color, reqData, true, httpOptions);
+   return this.httpService.postService(`Notes/UploadColor?NoteID=`+noteID+'&color='+color, {}, true, httpOptions);
+//Notes/UploadColor?NoteID=10045&color=black
+     
+  }
+
 }
 

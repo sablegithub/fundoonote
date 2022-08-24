@@ -3,11 +3,21 @@
         <img style="  opacity: 0.5;" src="assets\image\r.svg" alt="Image">
 
         <img style="  opacity: 0.5;" src="assets\image\c.svg" alt="Image">
+          
+         
 
-        <img style="  opacity: 0.5;" src="assets\image\s.svg" alt="Image">
+        <img  [matMenuTriggerFor]="menu1" style="  opacity: 0.5;" src="assets\image\s.svg" alt="Image">
 
+         <mat-menu #menu1="matMenu" fxLayput="row">
+            <div  *ngFor="let color of colors" >
+                <button  [style.background]="color.code"
+                (click)="setColor(color.code)" ></button>
+            </div>
+         </mat-menu>
+        
+         
         <img style="  opacity: 0.5;" src="assets\image\p.svg" alt="Image">
-        <img    (click)="Archive()" style="opacity: 0.5;" src="assets\image\a.svg" alt="Image">
+        <img (click)="Archive()" style="opacity: 0.5;" src="assets\image\a.svg" alt="Image">
 
 
         <img [matMenuTriggerFor]="menu" style="margin-right:auto; height: 25px; opacity: 0.5;" src="assets\image\m.svg"
